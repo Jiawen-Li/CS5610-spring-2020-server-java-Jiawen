@@ -1,134 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Course List</title>
-        <link href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-              rel="stylesheet"
-        />
-        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Course Editor</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet"
+    />
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+</head>
 
-    <body>
-    <div class="container">
+<body>
 
-        <!-- This is for headline -->
-        <div class="form-group row">
-            <ul class="nav nav-pills nav-justified" style="background-color: dimgrey">
-                <li class="form-group">
-                    <a class="form-group col" href="#" style="color: white"><i class="fas fa-times"></i></a>
-                </li>
+<!-- This is for headline -->
+<div class="form-group">
+    <ul class="nav nav-pills nav-fill" style="background-color: dimgrey">
+        <li class="form-group my-1 col-3" style="color: white; font-weight: bold">
+            <i class="fas fa-times my-2 fa-2x offset-1"></i>
+            CS5610-WebDev
+        </li>
 
-                <li class="form-group">
-                    <a class="form-group col" href="#" style="color: white; font-weight: bold">CS5610-WebDev</a>
-                </li>
+        <li class="nav-item my-3">
+            <a class="nav-link" href="#" style="color: lightgray">Build</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: lightgray">Build</a>
-                </li>
+        <li class="nav-item my-3">
+            <a class="nav-link active" href="#"
+               style="color: lightgray; background-color:black; font-weight: bold">
+                Pages
+            </a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="#"
-                       style="color: lightgray; background-color:black; font-weight: bold">
-                        Pages
-                    </a>
-                </li>
+        <li class="nav-item my-3">
+            <a class="nav-link" href="#" style="color: lightgray">Theme</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: lightgray">Theme</a>
-                </li>
+        <li class="nav-item my-3">
+            <a class="nav-link" href="#" style="color: lightgray">Store</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: lightgray">Store</a>
-                </li>
+        <li class="nav-item my-3">
+            <a class="nav-link" href="#" style="color: lightgray">Apps</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: lightgray">Apps</a>
-                </li>
+        <li class="nav-item my-3">
+            <a class="nav-link" href="#" style="color: lightgray">Settings</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: lightgray">Settings</a>
-                </li>
+        <li class="form-group my-2" style="color: white; font-weight: bold">
+            <i class="fas fa-plus my-3 col-1 fa-1x"></i>
+        </li>
+    </ul>
+</div>
 
-                <li class="form-group">
-                    <a class="form-group col" href="#" style="color: white; font-weight: bold">
-                        <i class="fas fa-plus"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-            <!--This is for left col-->
-        <div class="form-group">
-            <div class="form-group col-3">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link" id="v-pills-home-tab"
-                       data-toggle="pill" href="#v-pills-home"
-                       role="tab" aria-controls="v-pills-home" aria-selected="true">
-                        Module 1 - jQuery
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <a class="nav-link active" id="v-pills-profile-tab"
-                       data-toggle="pill" href="#v-pills-profile"
-                       role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                        Module 2 - React
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <a class="nav-link" id="v-pills-messages-tab"
-                       data-toggle="pill" href="#v-pills-messages"
-                       role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                        Module 3 - Redux
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <a class="nav-link" id="v-pills-settings-tab"
-                       data-toggle="pill" href="#v-pills-settings"
-                       role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                        Module 4 - Native
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <a class="nav-link" id="v-pills-settings-tab"
-                       data-toggle="pill" href="#v-pills-settings"
-                       role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                        Module 5 - Angular
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <a class="nav-link" id="v-pills-settings-tab"
-                       data-toggle="pill" href="#v-pills-settings"
-                       role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                        Module 6 - Node
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <a class="nav-link" id="v-pills-settings-tab"
-                       data-toggle="pill" href="#v-pills-settings"
-                       role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                        Module 7 - Mongo
-                        <i class="fas fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="form-group col-10">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home"
-                         role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-profile"
-                         role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-messages"
-                         role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-settings"
-                         role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="form-group col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-home-tab"
+                   data-toggle="pill" href="#v-pills-home"
+                   role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <span>Module 1 - jQuery</span>
+                    <i class="fas fa-times"></i>
+                </a>
+                <a class="nav-link active d-flex justify-content-between align-content-center" id="v-pills-profile-tab"
+                   data-toggle="pill" href="#v-pills-profile"
+                   role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                    <span>Module 2 - React</span>
+                    <i class="fas fa-times"></i>
+                </a>
+                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-messages-tab"
+                   data-toggle="pill" href="#v-pills-messages"
+                   role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                    <span>Module 3 - Redux</span>
+                    <i class="fas fa-times"></i>
+                </a>
+                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                   data-toggle="pill" href="#v-pills-settings"
+                   role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <span>Module 4 - Native</span>
+                    <i class="fas fa-times"></i>
+                </a>
+                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                   data-toggle="pill" href="#v-pills-settings"
+                   role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <span>Module 5 - Angular</span>
+                    <i class="fas fa-times"></i>
+                </a>
+                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                   data-toggle="pill" href="#v-pills-settings"
+                   role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <span>Module 6 - Node</span>
+                    <i class="fas fa-times"></i>
+                </a>
+                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                   data-toggle="pill" href="#v-pills-settings"
+                   role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <span>Module 7 - Mongo</span>
+                    <i class="fas fa-times"></i>
+                </a>
             </div>
         </div>
+        <div class="form-group col-9">
+            <button type="button" class="btn" style="background-color: dimgrey;color: white">Topic 1</button>
+            <button type="button" class="btn active" style="background-color: black;color: white">Topic 2</button>
+            <button type="button" class="btn" style="background-color: dimgrey;color: white">Topic 3</button>
+            <button type="button" class="btn" style="background-color: dimgrey;color: white">Topic 4</button>
+            <button type="button" class="btn" style="background-color: dimgrey;color: white">
+                <i class="fas fa-plus"></i>
+            </button>
 
-        <!--This is for right col-->
-<?
-    </body>
+            <div class="form-group row offset-7">
+                <button type="button" class="btn btn-success my-2">Save</button>
+                <button type="button" class="btn btn-secondary my-2 mx-2">Preview</button>
+            </div>
+
+            <div class="form-group row">
+                <span class="head fa-2x col-7" style="font-weight: bold"> Heading Widge</span>
+                <i class="fas fa-arrow-up fa-2x d-flex justify-content-between align-items-center mx-1 col-1"
+                   style="color: black"></i>
+                <i class="fas fa-arrow-down fa-2x d-flex justify-content-between align-items-center mx-1 col-1"
+                   style="color: black"></i>
+                <select class="form-control wbdv-field col-2 mx-1">
+                    <option>Heading</option>
+                </select>
+                <i class="fas fa-times fa-2x d-flex justify-content-between align-items-center mx-2 my-1"></i>
+            </div>
+
+            <input type="heading-text" class="form-control wbdv-field my-2 mb-3"
+                   id="headingtext" placeholder="Heading text">
+
+            <select class="custom-select custom-select my-2 mb-3  ">
+                <option selected>Heading 1</option>
+            </select>
+
+            <input type="widget-name" class="form-control wbdv-field my-2 mb-3"
+                   id="widgetname" placeholder="Heading text">
+
+            <span class="head fa-1x col-7" > Preview </span>
+            <span class="head fa-2x col-7" style="font-weight: bold" > Heading Text </span>
+
+            <div class="form-group row float-right my-4">
+                <i class="fas fa-trash-alt" style="color: darkred"></i>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
