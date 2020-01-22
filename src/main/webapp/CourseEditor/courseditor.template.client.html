@@ -14,8 +14,10 @@
 <!-- This is for headline -->
 <div class="form-group">
     <ul class="nav nav-pills nav-fill" style="background-color: dimgrey">
-        <li class="form-group my-1 col-3" style="color: white; font-weight: bold">
-            <i class="fas fa-times my-2 fa-2x offset-1"></i>
+        <li class="form-group my-1 col-3 wbdv-course-title" style="color: white; font-weight: bold">
+            <a href="../CourseList/courselist.template.client.html" style="color: lightgray">
+                <i class="fas fa-times my-2 fa-2x offset-1 wbdv-course-editor wbdv-close"></i>
+            </a>
             CS5610-WebDev
         </li>
 
@@ -24,7 +26,7 @@
         </li>
 
         <li class="nav-item my-3">
-            <a class="nav-link active" href="#"
+            <a class="nav-link active wbdv-page-tab" href="#"
                style="color: lightgray; background-color:black; font-weight: bold">
                 Pages
             </a>
@@ -46,7 +48,7 @@
             <a class="nav-link" href="#" style="color: lightgray">Settings</a>
         </li>
 
-        <li class="form-group my-2" style="color: white; font-weight: bold">
+        <li class="form-group my-2 wbdv-new-page-btn" style="color: white; font-weight: bold">
             <i class="fas fa-plus my-3 col-1 fa-1x"></i>
         </li>
     </ul>
@@ -54,58 +56,76 @@
 
 <div class="container">
     <div class="row">
-        <div class="form-group col-3">
+        <div class="form-group col-3 wbdv-module-list">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-home-tab"
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-home-tab"
                    data-toggle="pill" href="#v-pills-home"
                    role="tab" aria-controls="v-pills-home" aria-selected="true">
-                    <span>Module 1 - jQuery</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 1 - jQuery</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
                 </a>
-                <a class="nav-link active d-flex justify-content-between align-content-center" id="v-pills-profile-tab"
+                <a class="nav-link active d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-profile-tab"
                    data-toggle="pill" href="#v-pills-profile"
                    role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                    <span>Module 2 - React</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 2 - React</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
                 </a>
-                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-messages-tab"
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-messages-tab"
                    data-toggle="pill" href="#v-pills-messages"
                    role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                    <span>Module 3 - Redux</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 3 - Redux</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
                 </a>
-                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-settings-tab"
                    data-toggle="pill" href="#v-pills-settings"
                    role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                    <span>Module 4 - Native</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 4 - Native</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
                 </a>
-                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-settings-tab"
                    data-toggle="pill" href="#v-pills-settings"
                    role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                    <span>Module 5 - Angular</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 5 - Angular</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
                 </a>
-                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-settings-tab"
                    data-toggle="pill" href="#v-pills-settings"
                    role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                    <span>Module 6 - Node</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 6 - Node</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
                 </a>
-                <a class="nav-link d-flex justify-content-between align-content-center" id="v-pills-settings-tab"
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-settings-tab"
                    data-toggle="pill" href="#v-pills-settings"
                    role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                    <span>Module 7 - Mongo</span>
-                    <i class="fas fa-times"></i>
+                    <span class="wbdv-module-item-title">Module 7 - Mongo</span>
+                    <i class="fas fa-times wbdv-module-item-delete-btn"></i>
+                </a>
+                <a class="nav-link d-flex justify-content-between align-content-center wbdv-module-item"
+                   id="v-pills-settings-tab"
+                   data-toggle="pill" href="#v-pills-settings"
+                   role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <span class="wbdv-module-item-title"></span>
+                    <i class="fas fa-plus wbdv-module-item-delete-btn"></i>
                 </a>
             </div>
         </div>
-        <div class="form-group col-9">
-            <button type="button" class="btn" style="background-color: dimgrey;color: white">Topic 1</button>
-            <button type="button" class="btn active" style="background-color: black;color: white">Topic 2</button>
-            <button type="button" class="btn" style="background-color: dimgrey;color: white">Topic 3</button>
-            <button type="button" class="btn" style="background-color: dimgrey;color: white">Topic 4</button>
-            <button type="button" class="btn" style="background-color: dimgrey;color: white">
+        <div class="form-group col-9 wbdv-topic-pill-list">
+            <button type="button" class="btn wbdv-topic-pill" style="background-color: dimgrey;color: white">
+                Topic 1</button>
+            <button type="button" class="btn active wbdv-topic-pill" style="background-color: black;color: white">
+                Topic 2</button>
+            <button type="button" class="btn wbdv-topic-pill" style="background-color: dimgrey;color: white">
+                Topic 3</button>
+            <button type="button" class="btn wbdv-topic-pill" style="background-color: dimgrey;color: white">
+                Topic 4</button>
+            <button type="button" class="btn wbdv-topic-add-btn" style="background-color: dimgrey;color: white">
                 <i class="fas fa-plus"></i>
             </button>
 
