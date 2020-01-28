@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>User Admin</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+        </script>
+        <script src="user.service.client.js"></script>
+        <script src="user-admin.controller.client.js"></script>
+    </head>
+
+    <body>
+
+    <div class="container">
+        <table class="table" border="3" style="border: solid;border-color: white">
+            <thead style="background-color: cornflowerblue;color: white">
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Role</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+
+            <tr class="wbdv-form" style="background-color: whitesmoke">
+                <td><input id="usernameFld" class="form-control"
+                           placeholder="Username"/></td>
+                <td><input id="passwordFld" class="form-control"
+                           placeholder="Password"/></td>
+                <td><input id="firstNameFld" class="form-control"
+                           placeholder="First Name"/></td>
+                <td><input id="lastNameFld" class="form-control"
+                           placeholder="Last Name"/></td>
+                <td><select id="roleFld" class="form-control">
+                    <option value="FACULTY">Faculty</option>
+                    <option value="STUDENT">Student</option>
+                    <option value="ADMIN">Admin</option>
+                </select></td>
+                <td><span class="float-right" style="white-space: nowrap">
+                    <button style="background-color: burlywood; color: white;
+                                    border:none; width: 30px;height: 30px;
+                                    text-align: center; vertical-algn: baseline">
+                       <i class="fa-x fa fa-search wbdv-search"></i>
+                    </button>
+                    <button style="background-color: cornflowerblue; color: white;
+                                    border:none; width: 30px;height: 30px;
+                                    text-align: center; vertical-algn: baseline">
+                        <i class="fa-x fa fa-plus wbdv-create"></i>
+                    </button>
+                    <button style="background-color: cornflowerblue; color: white;
+                                    border:none; width: 30px;height: 30px;
+                                    text-align: center; vertical-algn: baseline">
+                        <i class="fa-x fa fa-check wbdv-update"></i>
+                    </button>
+                </span></td>
+            </tr>
+
+            <tbody class="wbdv-tbody" style="background-color: whitesmoke">
+                <tr class="wbdv-template wbdv-user wbdv-hidden">
+                    <td class="wbdv-username">ada</td>
+                    <td>&nbsp;</td>
+                    <td class="wbdv-first-name">Ada</td>
+                    <td class="wbdv-last-name">Lovelace</td>
+                    <td class="wbdv-role">FACULTY</td>
+                    <td class="wbdv-actions">
+                        <span class="float-right">
+                            <button style="background-color: burlywood; color: white;
+                                    border:none; width: 40px;height: 30px;
+                                    text-align: center; vertical-algn: baseline">
+                                 <i id="wbdv-remove"
+                                    class="fa-x fa fa-times wbdv-remove"
+                                    style="text-align: center"></i>
+                            </button>
+                            <button style="background-color: cornflowerblue; color: white;
+                                    border:none; width: 40px;height: 30px;
+                                    text-align: center; vertical-algn: baseline>
+                                <i id="wbdv-edit" class="fa-x fas fa-edit wbdv-edit"></i>
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>
