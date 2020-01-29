@@ -7,16 +7,15 @@
 
     function main() {
 
-        let $removeBtn = $('#wbdv-remove');
         let $editBtn = $('#wbdv-edit');
         let $createBtn = $('#wbdv-create');
+        let $updateBtn = $('#wbdv-update')
 
         $createBtn.click(createUser);
-        $removeBtn.click(deleteUser);
-        $editBtn.click(updateUser);
+        $updateBtn.click(updateUser);
 
-        let $userRowTemplate = $('.wbdv-template');
-        let $tbody = $('tbody');
+        // let $userRowTemplate = $('.wbdv-template');
+        // let $tbody = $('tbody');
 
         findAllUsers()
     }
@@ -28,7 +27,7 @@
         let $firstNameFld = $('#firstNameFld');
         let $lastNameFld = $('#lastNameFld');
         let $roleFld = $('#roleFld');
-        userService.createUser( {
+        userService.createUser({
             username: $usernameFld.val(),
             password: $passwordFld.val(),
             firstName: $firstNameFld.val(),
@@ -38,10 +37,10 @@
             findAllUsers();
         });
 
-        $usernameFld.val('')
-        $passwordFld.val('')
-        $firstNameFld.val('')
-        $lastNameFld.val('')
+        $usernameFld.val('');
+        $passwordFld.val('');
+        $firstNameFld.val('');
+        $lastNameFld.val('');
 
     }
 
@@ -60,22 +59,36 @@
         const userId = users[index]._id;
         userService.deleteUser(userId)
             .then(response => {
-                users.splice(index,1);
+                users.splice(index, 1);
                 renderUsers();
             })
     }
 
-    function selectUser() {
+    function updateUser() {
+        const $usernameFld = $('#usernameFld');
+        const $passwordFld = $('#passwordFld');
+        const $firstNameFld = $('#firstNameFld');
+        const $lastNameFld = $('#lastNameFld');
+        const $roleFld = $('#roleFld');
 
-    }
-
-    function updateUser(index) {
-
+        userService.updateUser(currentUserId, {
+            username: $usernameFld.val(),
+            password: $passwordFld.val(),
+            firstName: $firstNameFld.val(),
+            lastName: $lastNameFld.val(),
+            role: $roleFld.val()
+        }).then(newUsers => {
+            findAllUsers();
+            $usernameFld.val("");
+            $passwordFld.val("");
+            $firstNameFld.val("");
+            $lastNameFld.val("");
+        });
     }
 
     function renderUsers() {
         const $userlistFld = $('#userlistFld').find('tbody');
-        $userlistFld.find('tbody').empty();
+        $userlistFld.empty();
 
         for (let u = 0; u < users.length; u++) {
             renderUser(users[u], u);
@@ -93,8 +106,8 @@
             '                                    border:none; width: 40px;height: 30px;\n' +
             '                                    text-align: center; vertical-align: baseline">\n' +
             '                                <i class="fa-x fas fa-edit"></i></button>')
-        $remove_button.click(index=>deleteUser(index));
-        $edit_button.click(index=>updateUser(index));
+        $remove_button.click(() => {deleteUser(index)});
+        $edit_button.click(() => {editUser(index)});
         $userListFld
             .append($('<tr>')
                 .append($('<td>').text(user.username))
@@ -102,11 +115,29 @@
                 .append($('<td>').text(user.firstName))
                 .append($('<td>').text(user.lastName))
                 .append($('<td>').text(user.role))
-                .append($('<td>').append($('<span>').attr('class','float-right').append($remove_button)
+                .append($('<td>').append($('<span>').attr('class', 'float-right').append($remove_button)
                     .append($edit_button))
                 ));
 
     }
 
+    function editUser(index){
+        const $usernameFld = $('#usernameFld');
+        const $passwordFld = $('#passwordFld');
+        const $firstNameFld = $('#firstNameFld');
+        const $lastNameFld = $('#lastNameFld');
+        const $roleFld = $('#roleFld');
+
+        const userId = users[index]._id;
+        currentUserId = userId;
+        findUserById(userId).then(user=>{
+            $usernameFld.val(user.username);
+            $passwordFld.val(user.password);
+            $firstNameFld.val(user.firstName);
+            $lastNameFld.val(user.lastName);
+            $roleFld.val(user.role);
+        })
+
+    }
 
 })();
