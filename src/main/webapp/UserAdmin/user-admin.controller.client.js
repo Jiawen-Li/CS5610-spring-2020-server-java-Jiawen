@@ -52,12 +52,17 @@
         })
     }
 
-    function findUserById() {
-
+    function findUserById(userId) {
+        return userService.findUserById(userId)
     }
 
     function deleteUser(index) {
-
+        const userId = users[index]._id;
+        userService.deleteUser(userId)
+            .then(response => {
+                users.splice(index,1);
+                renderUsers();
+            })
     }
 
     function selectUser() {
@@ -86,10 +91,10 @@
             '                                    style="text-align: center"></i></button>')
         const $edit_button = $('<button style="background-color: cornflowerblue; color: white;\n' +
             '                                    border:none; width: 40px;height: 30px;\n' +
-            '                                    text-align: center; vertical-align: baseline>\n' +
+            '                                    text-align: center; vertical-align: baseline">\n' +
             '                                <i class="fa-x fas fa-edit"></i></button>')
-        $remove_button.click(deleteUser(index));
-        $edit_button.click(updateUser(index));
+        $remove_button.click(index=>deleteUser(index));
+        $edit_button.click(index=>updateUser(index));
         $userListFld
             .append($('<tr>')
                 .append($('<td>').text(user.username))
@@ -97,10 +102,9 @@
                 .append($('<td>').text(user.firstName))
                 .append($('<td>').text(user.lastName))
                 .append($('<td>').text(user.role))
-                .append($('<td>').append($('<span>').attr('class','float-right')
-                    .append($remove_button)
-                    .append($edit_button)
-                )));
+                .append($('<td>').append($('<span>').attr('class','float-right').append($remove_button)
+                    .append($edit_button))
+                ));
 
     }
 
