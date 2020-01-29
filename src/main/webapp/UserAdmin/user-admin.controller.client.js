@@ -6,14 +6,10 @@
     $(main());
 
     function main() {
-        let $usernameFld = $('#usernameFld');
-        let $passwordFld = $('#passwordFld');
+
         let $removeBtn = $('#wbdv-remove');
         let $editBtn = $('#wbdv-edit');
         let $createBtn = $('#wbdv-create');
-        let $firstNameFld = $('#firstNameFld');
-        let $lastNameFld = $('#lastNameFld');
-        let $roleFld = $('#roleFld');
 
         $createBtn.click(createUser);
         $removeBtn.click(deleteUser);
@@ -27,22 +23,26 @@
 
 
     function createUser() {
+        let $usernameFld = $('#usernameFld');
+        let $passwordFld = $('#passwordFld');
+        let $firstNameFld = $('#firstNameFld');
+        let $lastNameFld = $('#lastNameFld');
+        let $roleFld = $('#roleFld');
         userService.createUser( {
             username: $usernameFld.val(),
-            password: $passworldFld.val(),
+            password: $passwordFld.val(),
             firstName: $firstNameFld.val(),
             lastName: $lastNameFld.val(),
             role: $roleFld.val()
-        }
+        }).then(newUser => {
+            findAllUsers();
+        });
 
         $usernameFld.val('')
         $passwordFld.val('')
         $firstNameFld.val('')
         $lastNameFld.val('')
 
-        users.push(newUser)
-        console.log(users)
-        renderUsers()
     }
 
     function findAllUsers() {
